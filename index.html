@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta charset="utf-8" /> 
+	<title>Weightbook mobile</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />   
+	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script> 
+<body> 
+ 
+<!-- Start of main page --> 
+<div data-role="page" id="main"> 
+ 
+	<div data-role="header"> 
+		<h1>Weightbook</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content">
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li><a href="#walk">Kävely</a></li>
+			<li><a href="#weight">Paino</a></li>
+		</ul
+		<h3>Kehitys:</h3>
+		<p>
+			<img src="http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70" />
+		</p>
+	</div><!-- /content --> 
+	
+</div><!-- /page --> 
+ 
+ 
+<!-- Start of walk page --> 
+<div data-role="page" id="walk"> 
+ 
+	<div data-role="header"> 
+		<h1>Kävely</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content">	
+		<p>Kävely-sivu</p>		
+	</div><!-- /content --> 
+	
+</div><!-- /page --> 
+
+<!-- Start of weight page --> 
+<div data-role="page" id="weight"> 
+ 
+	<div data-role="header"> 
+		<h1>Paino</h1> 
+	</div><!-- /header --> 
+ 
+	<div data-role="content">	
+		<p>Paino-sivu</p>		
+	</div><!-- /content --> 
+	
+</div><!-- /page --> 
+ 
+</body> 
+</html> 
