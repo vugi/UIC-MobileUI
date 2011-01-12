@@ -38,8 +38,11 @@ function drawCharts(){
 		walkData.addRow([date, walk, walkTarget]);
 	}
 	
-	showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
+	setTimeout(function(){
+		showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
 	showSummaryGraph(20,weightData,"weight-summary-graph","AreaChart");
+	}, 1000);
+	
 }
 
 function showSummaryGraph(days,data,elementName,type){
@@ -53,8 +56,6 @@ function showSummaryGraph(days,data,elementName,type){
 	   
 	var summaryChart = new google.visualization[type](document.getElementById(elementName));
 	summaryChart.draw(dataView,{
-		width: 300, 
-		height: 100,
 		legend: 'none',
 		backgroundColor: '#E9EAEB'
        });
