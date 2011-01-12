@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
 	
 	<!-- Google JS API -->
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		
 	<!-- Weightbook JS -->
 	<script type="text/javascript" src="weightbook-mobile.js"></script>
@@ -28,6 +28,7 @@
 		google.setOnLoadCallback(drawCharts);
 	</script>
 	
+	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body> 
  
@@ -45,21 +46,19 @@
 		</ul>
 		-->
 		
-		
-		
-		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
-			<li><a href="#walk">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
-			<li data-role="list-divider">
+		<ul id="walk-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c" style="margin-top:0;">
+			<li><img src="assets/102-walk.png" class="ui-li-icon" /><a href="#walk">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
+			<li data-role="list-divider" style="padding: 0;">
 				<div id="walk-summary-graph"></div>
 			</li>
 		</ul>
 		
-		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
-			<li><a href="#weight">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
-			<li data-role="list-divider">
+		<ul id="weight-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
+			<li><img src="assets/81-dashboard.png" class="ui-li-icon" /><a href="#weight">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
+			<li data-role="list-divider" style="padding: 0;">
 				<div id="weight-summary-graph"></div>
 			</li>
-			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>
+			<li id="weight-add-link"><img src="assets/184-warning.png" class="ui-li-icon" /><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>
 		</ul>
 		
 		<ul data-role="listview" data-theme="d" data-inset="true">

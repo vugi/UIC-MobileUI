@@ -1,0 +1,17 @@
+#walk-summary .ui-li-icon {
+	top: 5px;
+	left: 12px;
+}
+
+#weight-summary .ui-li-icon {
+	top: 6px;
+	left: 6px;
+}
+
+#weight-add-link .ui-li-icon {
+	top: 10px;
+	left: 7px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}

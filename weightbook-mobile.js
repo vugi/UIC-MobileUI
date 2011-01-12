@@ -55,6 +55,7 @@ function showSummaryGraph(days,data,elementName,type){
 	summaryChart.draw(dataView,{
 		width: 300, 
 		height: 100,
-		legend: 'none'
+		legend: 'none',
+		backgroundColor: '#E9EAEB'
        });
 }
