@@ -16,6 +16,18 @@
 	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
 	
+	<!-- Google JS API -->
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		
+	<!-- Weightbook JS -->
+	<script type="text/javascript" src="weightbook-mobile.js"></script>
+	
+	<!-- Google visualizations api -->
+	<script type="text/javascript">
+		google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawCharts);
+	</script>
+	
 </head>
 <body> 
  
@@ -27,31 +39,33 @@
 	</div><!-- /header --> 
  
 	<div data-role="content">
-		
+		<!--
 		<ul data-role="listview" data-inset="true" data-theme="e">
 			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Päivitä Paino</a></li>
+		</ul>
+		-->
+		
+		
+		
+		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
+			<li><a href="#walk">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
+			<li data-role="list-divider">
+				<div id="walk-summary-graph"></div>
+			</li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
+			<li><a href="#weight">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
+			<li data-role="list-divider">
+				<div id="weight-summary-graph"></div>
+			</li>
+			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>
 		</ul>
 		
 		<ul data-role="listview" data-theme="d" data-inset="true">
 			<li data-role="list-divider">Kehitys</li> 
 			<li style="text-align: center"><div style="display:inline-block; height:90px; width:200px; background:url(http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70) no-repeat 0 -30px;"></div></li>
 		</ul>
-		
-		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
-			<li><a href="#walk">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
-			<li data-role="list-divider">Tänään: 1000</li>
-		</ul>
-		
-		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
-			<li><a href="#weight">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
-			<li data-role="list-divider">
-				Viimeisen viikon muutos: <span class="green">-1kg</span><br/>
-				Viimeisen kuukauden muutos: <span class="green">-3kg</span>
-			</li>
-			<!--<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>-->
-		</ul>
-		
-		
 		
 		
 	</div><!-- /content --> 
