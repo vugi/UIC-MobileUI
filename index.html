@@ -27,18 +27,20 @@
  
 	<div data-role="content">
 		
-		<ul data-role="listview" data-inset="true">
+		<ul data-role="listview" data-inset="true" data-theme="e">
 			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Päivitä Paino</a></li>
 		</ul>
 		
 		<ul data-role="listview" data-inset="true" data-theme="c">
+			<!--<li data-role="list-divider">Valikko</li>-->
 			<li><a href="#walk">Kävely</a></li>
 			<li><a href="#weight">Paino</a></li>
 		</ul>
-		<h3>Kehitys:</h3>
-		<p>
-			<img src="http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70" />
-		</p>
+		
+		<ul data-role="listview" data-theme="d" data-inset="true">
+			<li data-role="list-divider">Kehitys</li> 
+			<li><div style="height:90px;width=200px;background:url(http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70) no-repeat 0 -30px;"></div></li>
+		</ul>
 	</div><!-- /content --> 
 	
 </div><!-- /page --> 
