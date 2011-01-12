@@ -11,15 +11,21 @@
  
 <div data-role="page" id="weightadd"> 
 	
-		<div data-role="header"> 
+		<div data-role="header" data-theme="d"> 
 			<h1>Syötä päivän paino</h1> 
 		</div> 
  
-		<div data-role="content"> 
-			<p>Lisää Paino-sivu</p>	 
-			<p>This is a regular page, styled as a dialog. To create a dialog, just link to a normal page and include a transition and <code>data-rel="dialog"</code> attribute.</p> 
-			<a href="index.html" data-role="button" data-theme="b">Sounds good</a>       
-			<a href="index.html" data-role="button" data-theme="c">Cancel</a>    
+		<div data-role="content" data-theme="c">
+			<form id="addWeightForm">
+				<div data-role="fieldcontain">
+				    <label for="addweight">Paino:</label>
+				    <input type="number" name="addweight" id="addweight" value=""  />kg
+				</div>
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button type="submit" data-theme="c">Ohita</button></div>
+					<div class="ui-block-b"><button type="submit" data-theme="b">Tallenna</button></div>	   
+				</fieldset>
+			</form>
 		</div> 
 	</div> 
  
