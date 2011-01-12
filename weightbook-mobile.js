@@ -40,10 +40,6 @@ function drawCharts(){
 	
 	showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
 	showSummaryGraph(20,weightData,"weight-summary-graph","AreaChart");
-	
-	//showWalkGraph(30);
-	//showWeightGraph(30);
-	
 }
 
 function showSummaryGraph(days,data,elementName,type){
@@ -61,51 +57,4 @@ function showSummaryGraph(days,data,elementName,type){
 		height: 100,
 		legend: 'none'
        });
-}
-
-function showBigGraph(amount, skip, data, name){
-	var dataView = new google.visualization.DataView(data);
-	var maxIndex = dataView.getNumberOfRows()-1;
-	
-	// Update skip amount & scrolling button states
-	var rightButtonState="enable", leftButtonState="enable";
-	if (!skip || skip <= 0){
-		skip = 0;
-		rightButtonState = "disable";
-	}
-	if (skip >= maxIndex-amount){
-		skip = maxIndex-amount;
-		leftButtonState  = "disable";
-	}
-	skips[name] = skip;
-	
-	var lastIndex = maxIndex - skip;
-	var firstIndex = lastIndex - amount
-	dataView.setRows(firstIndex, lastIndex);
-	
-	if (!graphs[name]){
-		graphs[name] = new google.visualization.AreaChart(document.getElementById(name));
-	}
-	
-	graphs[name].draw(dataView, {width: 922, height: 300});
-	
-	// Update scrolling buttons
-	$("#"+name+"-container .scrollbutton.right").button(rightButtonState);
-	$("#"+name+"-container .scrollbutton.left").button(leftButtonState);
-}
-
-function showWalkGraph(days, skip){
-	showBigGraph(days,skip,walkData,"walk-graph");
-}
-
-function showWeightGraph(days, skip){
-	showBigGraph(days,skip,weightData,"weight-graph");
-}
-
-function scrollWalkGraph(days){
-	showWalkGraph(30,skips["walk-graph"]-days);
-}
-
-function scrollWeightGraph(days){
-	showWeightGraph(30,skips["weight-graph"]-days);
 }
