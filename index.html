@@ -4,8 +4,8 @@
 	<meta charset="utf-8" /> 
 	<title>Weightbook mobile</title> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />   
-	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script> 
+	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script> 
 <body> 
  
 <!-- Start of main page --> 
@@ -17,10 +17,14 @@
  
 	<div data-role="content">
 		
+		<ul data-role="listview" data-inset="true">
+			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Päivitä Paino</a></li>
+		</ul>
+		
 		<ul data-role="listview" data-inset="true" data-theme="c">
 			<li><a href="#walk">Kävely</a></li>
 			<li><a href="#weight">Paino</a></li>
-		</ul
+		</ul>
 		<h3>Kehitys:</h3>
 		<p>
 			<img src="http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70" />
