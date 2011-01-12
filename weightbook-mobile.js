@@ -38,10 +38,8 @@ function drawCharts(){
 		walkData.addRow([date, walk, walkTarget]);
 	}
 	
-	setTimeout(function(){
-		showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
+	showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
 	showSummaryGraph(20,weightData,"weight-summary-graph","AreaChart");
-	}, 1000);
 	
 }
 
