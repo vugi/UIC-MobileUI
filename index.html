@@ -80,7 +80,26 @@
 	</div><!-- /header --> 
  
 	<div data-role="content">	
-		<p>Kävely-sivu</p>		
+	
+		<div id="walk-graph"></div>
+	
+		<ul id="walk-stats" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" style="margin-top:0;">
+			<li data-role="list-divider">Kertymä</li>
+			<li>
+				<table>
+					<tr><td></td><td>Tänään</td><td>Viikko</td><td>Kuukausi</td></tr>
+					<tr><td>Toteutunut</td><td>7000</td><td>50000</td><td>320000</td></tr>
+					<tr><td>Tavoite</td><td>10000</td><td>70000</td><td>300000</td></tr>
+					<tr class="sumrow"><td></td><td class="red">-3000</td><td class="red">-20000</td><td class="green">+20000</td></tr>
+				</table>
+			</li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">Tavoite<span class="ui-li-count"><b>10000</b> askelta <b>päivässä</b></span></li>
+			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Laske ja aseta tavoite</a></li>
+		</ul>
+		
 	</div><!-- /content --> 
 	
 </div><!-- /page --> 

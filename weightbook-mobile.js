@@ -38,8 +38,9 @@ function drawCharts(){
 		walkData.addRow([date, walk, walkTarget]);
 	}
 	
-	showSummaryGraph(20,walkData,"walk-summary-graph","ColumnChart");
-	showSummaryGraph(20,weightData,"weight-summary-graph","AreaChart");
+	showSummaryGraph(7,walkData,"walk-summary-graph","ColumnChart");
+	showSummaryGraph(7,weightData,"weight-summary-graph","AreaChart");
+	showSummaryGraph(7,walkData,"walk-graph","ColumnChart");
 	
 }
 
@@ -49,12 +50,12 @@ function showSummaryGraph(days,data,elementName,type){
 	}
 	var dataView = new google.visualization.DataView(data);
 	var lastIndex = dataView.getNumberOfRows()-1;
-	dataView.setRows(lastIndex-7, lastIndex);
-	dataView.setColumns([1]);
+	dataView.setRows(lastIndex-days, lastIndex);
+	dataView.setColumns([0,1]);
 	   
 	var summaryChart = new google.visualization[type](document.getElementById(elementName));
 	summaryChart.draw(dataView,{
 		legend: 'none',
-		backgroundColor: '#E9EAEB'
+		backgroundColor: '#ffffff'
        });
 }
