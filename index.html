@@ -4,6 +4,8 @@
 	<meta charset="utf-8" /> 
 	<title>Weightbook mobile</title> 
 	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	
 	<!-- iOS settings -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -28,8 +30,7 @@
 		google.load("visualization", "1", {packages:["corechart"]});
 		//google.setOnLoadCallback(generateDataTables);
 	</script>
-	
-	<link rel="stylesheet" href="style.css" type="text/css" />
+
 </head>
 <body> 
  
@@ -41,23 +42,18 @@
 	</div><!-- /header --> 
  
 	<div data-role="content">
-		<!--
-		<ul data-role="listview" data-inset="true" data-theme="e">
-			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Päivitä Paino</a></li>
-		</ul>
-		-->
-		
-		<ul id="walk-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c" style="margin-top:0;">
+
+		<ul id="walk-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="f" style="margin-top:0;">
 			<li><img src="assets/102-walk.png" class="ui-li-icon" /><a href="#walkPage">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
 			<li data-role="list-divider" style="padding: 0;">
-				<div id="walk-summary-graph"></div>
+				<div id="walk-summary-graph" class="graph"></div>
 			</li>
 		</ul>
 		
-		<ul id="weight-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c">
-			<li><img src="assets/81-dashboard.png" class="ui-li-icon" /><a href="#weight">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
+		<ul id="weight-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="f">
+			<li><img src="assets/81-dashboard.png" class="ui-li-icon" /><a href="#weightPage">Paino</a><span class="ui-li-count">75 kg<span style="color: grey;"> / 70</span></span></li>
 			<li data-role="list-divider" style="padding: 0;">
-				<div id="weight-summary-graph"></div>
+				<div id="weight-summary-graph" class="graph"></div>
 			</li>
 			<li id="weight-add-link"><img src="assets/184-warning.png" class="ui-li-icon" /><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>
 		</ul>
@@ -66,7 +62,6 @@
 			<li data-role="list-divider">Kehitys</li> 
 			<li style="text-align: center"><div style="display:inline-block; height:90px; width:200px; background:url(http://chart.apis.google.com/chart?chs=200x120&cht=gom&chd=t:70) no-repeat 0 -30px;"></div></li>
 		</ul>
-		
 		
 	</div><!-- /content --> 
 	
@@ -82,7 +77,7 @@
  
 	<div data-role="content">	
 	
-		<div id="walk-graph"></div>
+		<div id="walk-graph" class="graph"></div>
 	
 		<ul id="walk-stats" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" style="margin-top:0;">
 			<li data-role="list-divider">Kertymä</li>
@@ -106,14 +101,43 @@
 </div><!-- /page --> 
 
 <!-- Start of weight page --> 
-<div data-role="page" id="weight"> 
+<div data-role="page" id="weightPage"> 
  
 	<div data-role="header"> 
 		<h1>Paino</h1> 
 	</div><!-- /header --> 
  
 	<div data-role="content">	
-		<p>Paino-sivu</p>		
+		<div id="weight-graph" class="graph"></div>
+	
+		<ul id="weight-stats" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" style="margin-top:0;">
+			<li data-role="list-divider">Tilastot</li>
+			<li>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<table>
+							<tr><td>Paino nyt</td><td>75</td></tr>
+							<tr><td>Tavoite</td><td>70</td></tr>
+							<tr class="sumrow"><td>Ero</td><td class="red">+5</td></tr>
+						</table>
+					</div>
+					<div class="ui-block-b">
+						<table>
+							<tr><td>Muutos:</td><td></td></tr>
+							<tr><td>Viikossa</td><td class="red">+1kg</td></tr>
+							<tr><td>Kuukaudessa</td><td class="green">+5</td></tr>
+						</table>
+					</div>
+				</div>
+				
+				
+			</li>
+		</ul>
+		
+		<ul data-role="listview" data-inset="true" data-theme="c">
+			<li data-role="list-divider">Tavoite<span class="ui-li-count"><b>70</b>kg <b>31.12</b> mennessä</span></li>
+			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Laske ja aseta tavoite</a></li>
+		</ul>	
 	</div><!-- /content --> 
 	
 </div><!-- /page --> 

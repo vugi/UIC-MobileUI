@@ -45,6 +45,11 @@ $('#walkPage').live('update',function(event, ui){
 	showGraph(7,walkData,"walk-graph","ColumnChart");
 });
 
+$('#weightPage').live('update',function(event, ui){
+	log("weightPage update");
+	showGraph(7,weightData,"weight-graph","AreaChart");
+});
+
 function generateDataTables(){
 	log("generateDataTables")
 	
@@ -76,6 +81,12 @@ function generateDataTables(){
 		var walk = Math.round(walkTarget/2+Math.random()*walkTarget);
 		walkData.addRow([date, walk, walkTarget]);
 	}
+	
+	// Format dates nicely
+	
+	var formatter_short = new google.visualization.DateFormat({pattern: "d.M"});
+	formatter_short.format(weightData, 0);
+	formatter_short.format(walkData, 0);
 }
 
 function showGraph(days,data,elementName,type){
