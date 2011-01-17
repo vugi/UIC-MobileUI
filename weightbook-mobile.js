@@ -6,8 +6,9 @@ var weightTarget, walkTarget;
 $(document).ready(function() {
 	log("document ready");
 	
-	weight = 80+Math.random()*10;
-	weightTarget = Math.round(weight-2);
+	weight = round(80+Math.random()*10,2);
+	console.log(weight);
+	weightTarget = round(weight-2);
 	walk = 7000;
 	walkTarget = 10000;
 	
@@ -68,7 +69,7 @@ function generateDataTables(){
 		date = new Date(date)
 		date.setDate(date.getDate()+1);
 		
-		weight += Math.random()*-0.2;
+		weight = round(weight + Math.random()*-0.2,2);
 		weightTarget = Math.round(weight-2);
 		weightData.addRow([date, weight, weightTarget]);
 		
@@ -105,4 +106,15 @@ function log(string){
 	if (debug && console && log){
 		console.log(string);
 	}
+}
+
+function round(value,decimals){
+	if (!decimals || decimals < 1){
+		return Math.round(value);
+	}
+	if (value == 0){
+		return value;
+	}
+	var divider = Math.pow(10,decimals);
+	return Math.round(value*divider)/divider;
 }
