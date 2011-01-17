@@ -4,8 +4,6 @@ var weightData, walkData;
 var weightTarget, walkTarget;
 
 $(document).ready(function() {
-	log("document ready");
-	
 	weight = round(80+Math.random()*10,2);
 	console.log(weight);
 	weightTarget = round(weight-2);
@@ -18,20 +16,11 @@ $(document).ready(function() {
 });
 
 $(document).orientationchange(function() {
-	alert("orientationchange");
 	$.mobile.activePage.trigger('update');
 });
 
-
 $('div').live('pagehide',function(event, ui){
-	log("This page was just shown:");
-	log(ui.nextPage);
 	ui.nextPage.trigger('update');
-});
-
-$('div').live('pageshow',function(event, ui){
-  log('This page was just hidden: ');
-  log(ui.prevPage);
 });
 
 $('#mainPage').live('update',function(event, ui){
@@ -51,6 +40,7 @@ $('#weightPage').live('update',function(event, ui){
 });
 
 function generateDataTables(){
+
 	log("generateDataTables")
 	
 	/* Initialize Tables */
