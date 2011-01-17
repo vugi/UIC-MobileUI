@@ -24,8 +24,9 @@
 	
 	<!-- Google visualizations api -->
 	<script type="text/javascript">
+		log("google.load");
 		google.load("visualization", "1", {packages:["corechart"]});
-		google.setOnLoadCallback(drawCharts);
+		//google.setOnLoadCallback(generateDataTables);
 	</script>
 	
 	<link rel="stylesheet" href="style.css" type="text/css" />
@@ -33,7 +34,7 @@
 <body> 
  
 <!-- Start of main page --> 
-<div data-role="page" id="main"> 
+<div data-role="page" id="mainPage"> 
  
 	<div data-role="header"> 
 		<h1>Weightbook</h1> 
@@ -47,7 +48,7 @@
 		-->
 		
 		<ul id="walk-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="c" style="margin-top:0;">
-			<li><img src="assets/102-walk.png" class="ui-li-icon" /><a href="#walk">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
+			<li><img src="assets/102-walk.png" class="ui-li-icon" /><a href="#walkPage">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
 			<li data-role="list-divider" style="padding: 0;">
 				<div id="walk-summary-graph"></div>
 			</li>
@@ -73,7 +74,7 @@
  
  
 <!-- Start of walk page --> 
-<div data-role="page" id="walk"> 
+<div data-role="page" id="walkPage"> 
  
 	<div data-role="header"> 
 		<h1>Kävely</h1> 
@@ -86,9 +87,9 @@
 		<ul id="walk-stats" data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" style="margin-top:0;">
 			<li data-role="list-divider">Kertymä</li>
 			<li>
-				<table>
+				<table class="ui-li-desc">
 					<tr><td></td><td>Tänään</td><td>Viikko</td><td>Kuukausi</td></tr>
-					<tr><td>Toteutunut</td><td>7000</td><td>50000</td><td>320000</td></tr>
+					<tr><td><strong>Toteutunut</strong></td><td><strong>7000</strong></td><td><strong>50000</strong></td><td><strong>320000</strong></td></tr>
 					<tr><td>Tavoite</td><td>10000</td><td>70000</td><td>300000</td></tr>
 					<tr class="sumrow"><td></td><td class="red">-3000</td><td class="red">-20000</td><td class="green">+20000</td></tr>
 				</table>

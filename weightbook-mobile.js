@@ -1,11 +1,53 @@
+var debug = true;
+var weight, walk;
 var weightData, walkData;
 var weightTarget, walkTarget;
-var graphs = {};
-var skips = {};
 
-function drawCharts(){
+$(document).ready(function() {
+	log("document ready");
 	
-	/* Generate Data */
+	weight = 80+Math.random()*10;
+	weightTarget = Math.round(weight-2);
+	walk = 7000;
+	walkTarget = 10000;
+	
+	generateDataTables();
+	
+	$.mobile.activePage.trigger('update');
+});
+
+$(document).orientationchange(function() {
+	alert("orientationchange");
+	$.mobile.activePage.trigger('update');
+});
+
+
+$('div').live('pagehide',function(event, ui){
+	log("This page was just shown:");
+	log(ui.nextPage);
+	ui.nextPage.trigger('update');
+});
+
+$('div').live('pageshow',function(event, ui){
+  log('This page was just hidden: ');
+  log(ui.prevPage);
+});
+
+$('#mainPage').live('update',function(event, ui){
+	log("mainPage update");
+	showGraph(7,walkData,"walk-summary-graph","ColumnChart");
+	showGraph(7,weightData,"weight-summary-graph","AreaChart");
+});
+
+$('#walkPage').live('update',function(event, ui){
+	log("walkPage update");
+	showGraph(7,walkData,"walk-graph","ColumnChart");
+});
+
+function generateDataTables(){
+	log("generateDataTables")
+	
+	/* Initialize Tables */
 				
     weightData = new google.visualization.DataTable();
     weightData.addColumn('date', 'Date');
@@ -16,14 +58,10 @@ function drawCharts(){
     walkData.addColumn('date', 'Date');
     walkData.addColumn('number', 'Kävely');
 	walkData.addColumn('number', 'Tavoite');
-
-	// Initial values
-	var weight = 80+Math.random()*10;
-	weightTarget = Math.round(weight-2);
-	walkTarget = 10000;
 	
 	// Let's generate some of data back from today
-	var amount = 100;
+	
+	var amount = 100; // how many days back to history
 	var date = new Date();
 	date.setDate(date.getDate()-amount-1);
 	for (var i=amount;i>0;i--){
@@ -37,17 +75,20 @@ function drawCharts(){
 		var walk = Math.round(walkTarget/2+Math.random()*walkTarget);
 		walkData.addRow([date, walk, walkTarget]);
 	}
-	
-	showSummaryGraph(7,walkData,"walk-summary-graph","ColumnChart");
-	showSummaryGraph(7,weightData,"weight-summary-graph","AreaChart");
-	showSummaryGraph(7,walkData,"walk-graph","ColumnChart");
-	
 }
 
-function showSummaryGraph(days,data,elementName,type){
+function showGraph(days,data,elementName,type){
+	
+	log("showGraph " + elementName);
+	
+	if(!data){
+		return;
+	}
+	
 	if(!type){
 		type = "AreaChart";
 	}
+	
 	var dataView = new google.visualization.DataView(data);
 	var lastIndex = dataView.getNumberOfRows()-1;
 	dataView.setRows(lastIndex-days, lastIndex);
@@ -58,4 +99,10 @@ function showSummaryGraph(days,data,elementName,type){
 		legend: 'none',
 		backgroundColor: '#ffffff'
        });
+}
+
+function log(string){
+	if (debug && console && log){
+		console.log(string);
+	}
 }

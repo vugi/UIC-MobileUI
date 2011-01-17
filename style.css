@@ -28,12 +28,16 @@
 	margin-bottom: 10px;
 }
 
+table {
+	border-spacing: 0;
+}
+
 td {
 	padding: 3px 10px;
 }
 
 .sumrow td {
-	border-top: 1px solid black;
+	border-top: 1px solid grey;
 }
 .red {
 	color: red;
