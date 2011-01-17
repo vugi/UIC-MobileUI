@@ -5,7 +5,7 @@ var weightTarget, walkTarget;
 
 $(document).ready(function() {
 	weight = round(80+Math.random()*10,2);
-	console.log(weight);
+	//console.log(weight);
 	weightTarget = round(weight-2);
 	walk = 7000;
 	walkTarget = 10000;
@@ -104,9 +104,9 @@ function showGraph(days,data,elementName,type){
 }
 
 function log(string){
-	if (debug && console && log){
-		console.log(string);
-	}
+	//if (debug && console && log){
+	//	console.log(string);
+	//}
 }
 
 function round(value,decimals){
