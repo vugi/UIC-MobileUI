@@ -22,7 +22,7 @@
 }
 
 #weight-summary-graph, #walk-summary-graph {
-	height: 95px;
+	height: 90px;
 	margin: -5px 0 5px 0;
 }
 
@@ -50,23 +50,23 @@ td {
 	color: green;
 }
 
-.prog-border {
-	margin: 5px auto 5px auto;
-	height: 20px;
-	width: 100%;
-	border: 1px solid black;
-	text-align: right;
+#progress {
+	margin: 0px 0 15px 0;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px #225377;
 }
 
-.prog-bar { 
-	height: 20px;
+#progress div {
+	position: relative;
 	width: 71%;
 	color: white;
+	padding: 10px 0 10px 40px;
 	background: #339900;
 	background: -webkit-gradient(linear, left top, right top, from(#993300), to(#339900));
 	background: -moz-linear-gradient(left,  #993300,  #339900);
-} 
+}
 
-.prog-num {
-	margin-right: 29%;
+#progress .ui-li-icon {
+	top: 7px;
+	left: 7px;
 }

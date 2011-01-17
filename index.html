@@ -40,6 +40,14 @@
 	</div><!-- /header --> 
  
 	<div data-role="content">
+		
+		<div id="progress" class="ui-corner-all ui-shadow">
+			<div class="ui-corner-all">
+				<img src="assets/16-line-chart.png" class="ui-li-icon" />
+				<span>Kehitys</span>
+				<span class="ui-li-count ui-btn-up-c ui-btn-corner-all" style="right:10px">+21%</span>
+			</div>
+		</div>
 
 		<ul id="walk-summary" data-role="listview" data-inset="true" data-theme="b" data-dividertheme="f" style="margin-top:0;">
 			<li><img src="assets/102-walk.png" class="ui-li-icon" /><a href="#walkPage">Kävely</a><span class="ui-li-count"><span>6000</span> askelta <span style="color: grey;"> / 10000</span></span></li>
@@ -54,15 +62,6 @@
 				<div id="weight-summary-graph" class="graph"></div>
 			</li>
 			<li id="weight-add-link"><img src="assets/184-warning.png" class="ui-li-icon" /><a href="weightadd.html" data-rel="dialog" data-transition="pop">Lisää päivän paino</a></li>
-		</ul>
-		
-		<ul data-role="listview" data-theme="d" data-inset="true">
-			<li data-role="list-divider">Kehitys</li> 
-			<li>
-				<div class="prog-border">
-					<div class="prog-bar"><span class="prog-num">+21%</span></div>
-				</div>
-			</li>
 		</ul>
 		
 	</div><!-- /content --> 
