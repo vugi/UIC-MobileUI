@@ -140,11 +140,28 @@
 		
 		<ul data-role="listview" data-inset="true" data-theme="c">
 			<li data-role="list-divider">Tavoite<span class="ui-li-count"><b>70</b>kg <b>31.12</b> mennessä</span></li>
-			<li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Laske ja aseta tavoite</a></li>
+			<li><a href="#weightTargetPage">Aseta tavoite</a></li>
 		</ul>	
 	</div><!-- /content --> 
 	
 </div><!-- /page --> 
- 
+
+<!-- start of weight-target page -->
+<div data-role="page" id="weightTargetPage">
+	<div data-role="header">
+		<h1>Aseta painotavoite</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<div data-role="collapsible-set">
+			<div data-role="collapsible">
+				<h3>Aseta tavoite</h3>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Laske tavoite</h3>
+			</div>
+		</div>
+	</div><!-- /content -->
+</div><!-- /page -->
 </body> 
 </html> 
