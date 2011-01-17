@@ -91,13 +91,12 @@
 				</table>
 			</li>
 		</ul>
-		
-		<ul data-role="listview" data-inset="true" data-theme="c">
-			<li data-role="list-divider">Tavoite<span class="ui-li-count"><b>10000</b> askelta <b>päivässä</b></span></li>
-			<li><a href="#walk-target-page">Aseta tavoite</a></li>
-			<!-- <li><a href="weightadd.html" data-rel="dialog" data-transition="pop">Laske ja aseta tavoite</a></li> -->
+
+		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="f">
+			<li><a href="#walk-target-page">Tavoitteen asettaminen</a></li>
+			<li data-role="list-divider">Nykyinen tavoite: <b>10000</b> askelta <b>päivässä</b></li>
 		</ul>
-		
+				
 	</div><!-- /content --> 
 	
 </div><!-- /page --> 
@@ -139,7 +138,7 @@
 
 		
 		<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="f">
-			<li><a href="#walk-target-page">Tavoite</a></li>
+			<li><a href="#weight-target-page">Tavoitteen asettaminen</a></li>
 			<li data-role="list-divider">
 				Nykyinen tavoite: <b>70</b>kg <b>31.12</b> mennessä
 			</li>
@@ -149,16 +148,16 @@
 </div><!-- /page --> 
 
 <!-- start of walk-target page -->
-<div data-role="page" id="walk-target-page" data-theme="b">
-	<div data-role="header" data-theme="a">
+<div data-role="page" id="walk-target-page">
+	<div data-role="header">
 		<h1>Aseta askeltavoite</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
 		<div data-role="collapsible-set">
-			<div data-role="collapsible">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Aseta tavoite itse</h3>
-				<form id="walk-target-form-manual" method="get" action="#">
+				<form id="walk-target-form-manual" method="get" action="#" data-role="list-divider">
 					<div data-role="fieldcontain">
 						<label for="walk-target-number">Askelmäärä</label>
 						<input type="number" pattern="[0-9]*" name="walk-target-number" id="walk-target-number" value="10000" />
@@ -175,10 +174,10 @@
 							<label for="walk-target-month">Kuukaudessa</label>
 						</fieldset>
 					</div>
-					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Aseta</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)" data-theme="b">Aseta</button>
 				</form>
 			</div>
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Laske tavoite automaattisesti</h3>
 				<form id="walk-target-form-auto" method="get" action="#">
 					<div data-role="fieldcontain">
@@ -189,7 +188,7 @@
 						<label for="walk-target-length">Pituus</label>
 						<input type="number" pattern="[0-9]{2,3}" name="walk-target-length" id="walk-target-length" value="" />
 					</div>
-					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Laske</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)" data-theme="b">Laske</button>
 					
 				</form>
 			</div>
@@ -198,14 +197,14 @@
 </div><!-- /page -->
 
 <!-- start of weight-target page -->
-<div data-role="page" id="weight-target-page" data-theme="b">
+<div data-role="page" id="weight-target-page">
 	<div data-role="header" data-theme="a">
 		<h1>Aseta painotavoite</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">
 		<div data-role="collapsible-set">
-			<div data-role="collapsible">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Aseta tavoite itse</h3>
 				<form id="weight-target-form-manual" method="get">
 					<div data-role="fieldcontain">
@@ -216,10 +215,10 @@
 						<label for="weight-target-date">Päivämäärään mennessä</label>
 						<input type="text" name="weight-target-date" id="weight-target-date" value="17.1.2010" />
 					</div>
-					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Aseta</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)" data-theme="b">Aseta</button>
 				</form>
 			</div>
-			<div data-role="collapsible" data-collapsed="true">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b">
 				<h3>Laske tavoite automaattisesti</h3>
 				<form id="weight-target-form-auto" method="get" action="#">
 					<div data-role="fieldcontain">
@@ -230,7 +229,7 @@
 						<label for="weight-target-length">Pituus</label>
 						<input type="number" pattern="[0-9]{2,3}" name="weight-target-length" id="weight-target-length" value="" />
 					</div>
-					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Laske</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)" data-theme="b">Laske</button>
 					
 				</form>
 			</div>
