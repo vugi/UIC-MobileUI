@@ -172,7 +172,7 @@
 							<label for="walk-target-month">Kuukaudessa</label>
 						</fieldset>
 					</div>
-					<button type="submit" name="submit" value="submit-value">Aseta</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Aseta</button>
 				</form>
 			</div>
 			<div data-role="collapsible" data-collapsed="true">
@@ -186,7 +186,7 @@
 						<label for="walk-target-length">Pituus</label>
 						<input type="number" pattern="[0-9]{2,3}" name="walk-target-length" id="walk-target-length" value="" />
 					</div>
-					<button type="submit" name="submit" value="submit-value">Laske</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Laske</button>
 					
 				</form>
 			</div>
@@ -204,7 +204,7 @@
 		<div data-role="collapsible-set">
 			<div data-role="collapsible">
 				<h3>Aseta tavoite itse</h3>
-				<form id="weight-target-form-manual" method="get" action="#">
+				<form id="weight-target-form-manual" method="get">
 					<div data-role="fieldcontain">
 						<label for="weight-target-number">Paino (kg)</label>
 						<input type="number" pattern="[0-9]*" name="weight-target-number" id="weight-target-number" value="" />
@@ -213,7 +213,7 @@
 						<label for="weight-target-date">Päivämäärään mennessä</label>
 						<input type="text" name="weight-target-date" id="weight-target-date" value="17.1.2010" />
 					</div>
-					<button type="submit" name="submit" value="submit-value">Aseta</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Aseta</button>
 				</form>
 			</div>
 			<div data-role="collapsible" data-collapsed="true">
@@ -227,7 +227,7 @@
 						<label for="weight-target-length">Pituus</label>
 						<input type="number" pattern="[0-9]{2,3}" name="weight-target-length" id="weight-target-length" value="" />
 					</div>
-					<button type="submit" name="submit" value="submit-value">Laske</button>
+					<button type="button" name="submit" value="submit-value" onClick="history.go(-1)">Laske</button>
 					
 				</form>
 			</div>
