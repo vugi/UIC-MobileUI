@@ -2,10 +2,16 @@ var debug = true;
 var weight, walk;
 var weightData, walkData;
 var weightTarget, walkTarget;
+var svgSupport;
 
 $(document).ready(function() {
+	
+	svgSupport = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1");
+	if (!svgSupport){
+		alert("SVG isn't supported on your device, graphs does't work");
+	}
+	
 	weight = round(80+Math.random()*10,2);
-	console.log(weight);
 	weightTarget = round(weight-2);
 	walk = 7000;
 	walkTarget = 10000;
